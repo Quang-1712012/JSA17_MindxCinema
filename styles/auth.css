@@ -1,0 +1,52 @@
+/* Import font Roboto từ Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap");
+
+/* Reset CSS cho toàn bộ trang */
+* {
+  margin: 0; /* Xóa margin mặc định */
+  padding: 0; /* Xóa padding mặc định */
+  box-sizing: border-box; /* Kích thước phần tử bao gồm cả padding và border */
+  font-family: "Roboto", sans-serif; /* Thiết lập font mặc định */
+}
+
+/* Nền chính của trang */
+body {
+  background: #000; /* Màu nền đen */
+}
+
+/* Tạo lớp phủ ảnh nền */
+body::before {
+  content: ""; /* Bắt buộc khi dùng ::before */
+  position: absolute; /* Định vị tuyệt đối */
+  left: 0;
+  top: 0;
+  opacity: 0.5; /* Làm mờ ảnh nền */
+  width: 100%; /* Chiều rộng toàn màn hình */
+  height: 100%; /* Chiều cao toàn màn hình */
+  background: url("../assets/hero-img.jpg"); /* Ảnh nền */
+  background-position: center; /* Căn giữa ảnh */
+}
+
+/* Thanh navigation */
+nav {
+  position: fixed; /* Cố định vị trí khi scroll */
+  padding: 25px 60px; /* Khoảng cách bên trong */
+  z-index: 1; /* Hiển thị phía trên background */
+}
+
+/* Logo */
+nav a img {
+  width: 167px; /* Chiều rộng logo */
+}
+
+/* Khung chứa form đăng nhập/đăng ký */
+.form-wrapper {
+  position: absolute; /* Định vị tuyệt đối */
+  left: 50%; /* Đưa sang giữa theo chiều ngang */
+  top: 50%; /* Đưa xuống giữa theo chiều dọc */
+  border-radius: 4px; /* Bo góc */
+  padding: 70px; /* Khoảng cách bên trong */
+  width: 450px; /* Chiều rộng form */
+  transform: translate(-50%, -50%); /* Căn giữa hoàn toàn */
+  background: rgba(0, 0, 0, 0.75); /* Nền đen mờ */
+}
