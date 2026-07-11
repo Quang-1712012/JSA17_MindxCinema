@@ -50,3 +50,184 @@ nav a img {
   transform: translate(-50%, -50%); /* Căn giữa hoàn toàn */
   background: rgba(0, 0, 0, 0.75); /* Nền đen mờ */
 }
+/* Thanh navigation */
+nav {
+  position: fixed; /* Cố định vị trí khi scroll */
+  padding: 25px 60px; /* Khoảng cách bên trong */
+  z-index: 1; /* Hiển thị phía trên background */
+}
+
+/* Logo */
+nav a img {
+  width: 167px; /* Chiều rộng logo */
+}
+
+/* Khung chứa form đăng nhập/đăng ký */
+.form-wrapper {
+  position: absolute; /* Định vị tuyệt đối */
+  left: 50%; /* Đưa sang giữa theo chiều ngang */
+  top: 50%; /* Đưa xuống giữa theo chiều dọc */
+  border-radius: 4px; /* Bo góc */
+  padding: 70px; /* Khoảng cách bên trong */
+  width: 450px; /* Chiều rộng form */
+  transform: translate(-50%, -50%); /* Căn giữa hoàn toàn */
+  background: rgba(0, 0, 0, 0.75); /* Nền đen mờ */
+}/* Tiêu đề form */
+.form-wrapper h2 {
+  color: #fff; /* Màu trắng */
+  font-size: 2rem; /* Kích thước chữ */
+}
+
+/* Khoảng cách của form */
+.form-wrapper form {
+  margin: 25px 0 65px;
+}
+
+/* Khung chứa mỗi ô input */
+form .form-control {
+  height: 50px;
+  position: relative; /* Để label absolute dựa vào */
+  margin-bottom: 16px;
+}
+
+/* Input */
+.form-control input {
+  height: 100%;
+  width: 100%;
+  background: #333; /* Màu nền xám */
+  border: none; /* Bỏ viền */
+  outline: none; /* Bỏ viền focus */
+  border-radius: 4px;
+  color: #fff; /* Chữ màu trắng */
+  font-size: 1rem;
+  padding: 0 20px;
+}
+
+/* Khi input được focus hoặc đã nhập dữ liệu */
+.form-control input:is(:focus, :valid) {
+  background: #444; /* Làm nền sáng hơn */
+  padding: 16px 20px 0; /* Tạo khoảng trống cho label */
+}
+
+/* Label của input */
+.form-control label {
+  position: absolute; /* Đặt đè lên input */
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%); /* Căn giữa theo chiều dọc */
+  font-size: 1rem;
+  pointer-events: none; /* Click xuyên qua label */
+  color: #8c8c8c;
+  transition: all 0.1s ease; /* Hiệu ứng chuyển động */
+}
+
+/* Hiệu ứng label bay lên khi focus hoặc đã nhập */
+.form-control input:is(:focus, :valid) ~ label {
+  font-size: 0.75rem; /* Thu nhỏ label */
+  transform: translateY(-130%); /* Di chuyển lên trên */
+}
+/* Nút submit */
+form button {
+  width: 100%;
+  padding: 16px 0;
+  font-size: 1rem;
+  background: #e50914; /* Màu đỏ Netflix */
+  color: #fff;
+  font-weight: 500;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  margin: 25px 0 10px;
+  cursor: pointer; /* Hiển thị bàn tay */
+  transition: 0.1s ease;
+}
+
+/* Hiệu ứng hover nút */
+form button:hover {
+  background: #c40812;
+}
+
+/* Link trong form */
+.form-wrapper a {
+  text-decoration: none; /* Bỏ gạch chân */
+}
+
+/* Hover link */
+.form-wrapper a:hover {
+  text-decoration: underline;
+}
+
+/* Đặt màu chữ chung */
+.form-wrapper :where(label, p, small, a) {
+  color: #b3b3b3;
+}
+
+/* Khu vực remember me và help */
+form .form-help {
+  display: flex; /* Hiển thị theo hàng */
+  justify-content: space-between; /* Đẩy 2 đầu */
+}
+
+/* Khu vực checkbox remember me */
+form .remember-me {
+  display: flex;
+}
+
+/* Checkbox */
+form .remember-me input {
+  margin-right: 5px;
+  accent-color: #b3b3b3; /* Đổi màu checkbox */
+}
+
+/* Kích thước chữ của help */
+form .form-help :where(label, a) {
+  font-size: 0.9rem;
+}
+
+/* Link Sign Up/Sign In */
+.form-wrapper p a {
+  color: #fff;
+}
+
+/* Chữ nhỏ */
+.form-wrapper small {
+  display: block;
+  margin-top: 15px;
+  color: #b3b3b3;
+}
+
+/* Link trong chữ nhỏ */
+.form-wrapper small a {
+  color: #0071eb;
+}
+
+/* Responsive cho màn hình nhỏ */
+@media (max-width: 740px) {
+
+  /* Ẩn ảnh nền */
+  body::before {
+    display: none;
+  }
+
+  /* Giảm padding */
+  nav,
+  .form-wrapper {
+    padding: 20px;
+  }
+
+  /* Thu nhỏ logo */
+  nav a img {
+    width: 140px;
+  }
+
+  /* Form chiếm toàn bộ chiều rộng */
+  .form-wrapper {
+    width: 100%;
+    top: 43%;
+  }
+
+  /* Giảm khoảng cách form */
+  .form-wrapper form {
+    margin: 25px 0 40px;
+  }
+}
